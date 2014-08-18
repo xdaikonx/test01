@@ -7,7 +7,6 @@
 //
 
 #import "SecondViewController.h"
-#import "ViewController.h"
 @interface SecondViewController ()
 
 @end
@@ -16,11 +15,11 @@
 
 @synthesize selector01;
 
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    selector01.selectedSegmentIndex=1;
 }
 
 - (IBAction)ChangeWindow:(id)sender{
