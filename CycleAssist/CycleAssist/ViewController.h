@@ -8,7 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController{
+    // CycleAssist OR Howtoを選ぶためのSegmented Controlのインスタンス
+    IBOutlet UISegmentedControl *selector;
+}
+@property (nonatomic,retain)UISegmentedControl *selector;
+
+//segmentedControlをタップしたときに呼ばれるメゾット
+- (IBAction)WindowChange:(id)sender;
 
 @end
 

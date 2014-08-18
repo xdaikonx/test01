@@ -12,10 +12,9 @@
 
 @end
 
-@implementation SecondViewController{
-    // 「ドル→円」or「円→ドル」を選ぶためのSegmented Controlのインスタンス
-    IBOutlet UISegmentedControl *selector;
-}
+@implementation SecondViewController
+
+@synthesize selector01;
 
 
 - (void)viewDidLoad
@@ -26,10 +25,9 @@
 
 - (IBAction)ChangeWindow:(id)sender{
     //Cycle assistが選択された場合
-    if(selector.selectedSegmentIndex==0){
-        
+    if(selector01.selectedSegmentIndex==0){
     //Howtoが選択された場合
-    }else if(selector.selectedSegmentIndex==1){
+    }else if(selector01.selectedSegmentIndex==1){
     }
 }
 
