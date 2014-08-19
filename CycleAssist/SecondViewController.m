@@ -7,136 +7,82 @@
 //
 
 #import "SecondViewController.h"
-@interface SecondViewController ()
+@interface SecondViewController ()<UITableViewDataSource, UITableViewDelegate>
+
+@property (strong, nonatomic)NSMutableArray *nanapilist;
 
 @end
 
+#define NANAPI_API_URL @"http://api.nanapi.jp/v1/recipeSearchDetails/?key=4b542e23e43f6&format=json&query=%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AA%E3%83%B3%E3%82%B0%20%E8%87%AA%E8%BB%A2%E8%BB%8A%20%E3%83%90%E3%82%A4%E3%82%AF"
 @implementation SecondViewController{
-    //XMLオブジェクト
-    TBXML *rssXML;
-    
+
+
     //最新ニュースを格納する配列
     NSMutableArray* elementList;
     
     //Table Viewインスタンス
     IBOutlet UITableView *table;
-    
-    //Safariに渡すURL
-    NSURL *urlForSafari;
 }
+//Safariに渡すURL
+NSURL *urlForSafari;
 
 @synthesize selector01;
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     selector01.selectedSegmentIndex=1;
-    //XMLを取得・解析
-    [self getXML];
-}
-//HTTP通信を利用してXMLを取得
-- (void) getXML {
+        // デリゲート初期化
+        self.tableView.delegate = self;
+        self.tableView.dataSource = self;
     
-    NSString *urlString = @"http://rss.dailynews.yahoo.co.jp/fc/rss.xml";
-    NSURL *url = [NSURL URLWithString:urlString];
-    //成功時のコールバック処理
-    TBXMLSuccessBlock successBlock = ^(TBXML *tbxmlDocument) {
-        NSLog(@"「%@」の取得に成功しました。", url);
-        //XMLを解析
-        [self parseXML];
-    };
-    //失敗時のコールバック処理
-    TBXMLFailureBlock failureBlock = ^(TBXML *tbxmlDocument, NSError * error) {
-        NSLog(@"「%@」の取得に失敗しました。", url);
-    };
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    
-    //URLで指定したRSSのXMLをバックグラウンドでダウンロード
-    rssXML = [TBXML tbxmlWithURL:url success:successBlock failure:failureBlock];
-    
+    //JSONの取得コール
+    [self getJson];
 }
 
-//取得したXMLをパース（解析）
-- (void) parseXML {
-    //elementListを初期化
-    elementList = [[NSMutableArray alloc] init];
+- (void)getJson
+{
+        NSURL *url = [NSURL URLWithString:NANAPI_API_URL];
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        
+                // JSON形式のデータをNSDictへ
+                NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        
+                // リスト管理するプロパティへ挿入
+                self.nanapilist = [[dict objectForKey:@"response"] objectForKey:@"recipes"];
+        
+                // データ取得後テーブルを再描画
+            [self.tableView reloadData];
+            }];
     
-    //XMLの最初の要素<rss>を取得
-    TBXMLElement *rssElement = rssXML.rootXMLElement;
-    
-    //<rss>以下の<channel>を取得
-    TBXMLElement *channelElement = [TBXML childElementNamed:@"channel" parentElement:rssElement];
-    
-    //実際のニュース項目を記録した<item>を取得
-    TBXMLElement *itemElement = [TBXML childElementNamed:@"item" parentElement:channelElement];
-    
-    //<item>の数だけ繰り返し
-    while (itemElement) {
-        
-        //<item>以下の<title>を取得
-        TBXMLElement *titleElement = [TBXML childElementNamed:@"title" parentElement:itemElement];
-        //<item>以下の<link>を取得
-        TBXMLElement *urlElement = [TBXML childElementNamed:@"link" parentElement:itemElement];
-        //<item>以下の<pubDate>を取得
-        TBXMLElement *dateElement = [TBXML childElementNamed:@"pubDate" parentElement:itemElement];
-        
-        
-        //それぞれの要素のテキスト内容をNSStringとして取得
-        NSString *title = [TBXML textForElement:titleElement];
-        NSString *url = [TBXML textForElement:urlElement];
-        NSString *date = [TBXML textForElement:dateElement];
-        
-        NSLog(@"%@ %@", title, url);
-        
-        //新しいNewsクラスのインスタンス生成
-        News *n = [[News alloc] init];
-        
-        //nにタイトル・URL・日時を格納
-        n.title = title;
-        n.url = url;
-        n.date = date;
-        
-        //nをelementListに追加
-        [elementList addObject:n];
-        
-        //次の<item>要素へ移動
-        itemElement = itemElement->nextSibling;
-        
+}
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+        // 表示は3件のみ
+        return 3.f;
     }
 
-//バックグラウンドでの処理完了に伴い、フロント側でリストを更新
-[self refreshTableOnFront];
-}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+        // セクションはいらない
+        return 1.f;
+    }
 
-//Table Viewのセクション数を指定
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+        NSDictionary *recipe = [self.nanapilist objectAtIndex:indexPath.row];
+        cell.textLabel.text = [recipe objectForKey:@"title"];
+        return cell;
+    }
 
-//Table Viewのセルの数を指定
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [elementList count];
-}
-
-//各セルにタイトルをセット
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    //セルのスタイルを標準のものに指定
-    static NSString *CellIdentifier = @"NewsCell";
-    UITableViewCell *cell =
-    [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    //カスタムセル上のラベル
-    UILabel *titleLabel = (UILabel*)[cell viewWithTag:1];
-    UILabel *dateLabel = (UILabel*)[cell viewWithTag:2];
-    
-    //セルにお気に入りサイトのタイトルを表示
-    News *f = [elementList objectAtIndex:[indexPath row]];
-    titleLabel.text = f.title;
-    dateLabel.text = f.date;
-    
-    return cell;
-}
 //フロント側でテーブルを更新
 - (void) refreshTableOnFront {
     [self performSelectorOnMainThread:@selector(refreshTable) withObject:self waitUntilDone:TRUE];
@@ -190,11 +136,6 @@
         [[UIApplication sharedApplication] openURL:urlForSafari];
     }
 }
-//フィードを更新
--(IBAction)refreshList:(id)sender {
-    //最新のRSSフィードを取得
-    [self getXML];
-}
 
 - (IBAction)ChangeWindow:(id)sender{
     //Cycle assistが選択された場合
@@ -205,11 +146,6 @@
 }
 
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 /*
 #pragma mark - Navigation
