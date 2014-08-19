@@ -8,11 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController{
+#import "TBXML.h"
+#import "TBXML+HTTP.h"
+
+#import "News.h"
+
+
+@interface SecondViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>{
     // CycleAssist OR Howtoを選ぶためのSegmented Controlのインスタンス
     IBOutlet UISegmentedControl *selector01;
 }
-
 @property (nonatomic, retain)UISegmentedControl *selector01;
 
 //segmentedControlをタップしたときに呼ばれるメゾット
