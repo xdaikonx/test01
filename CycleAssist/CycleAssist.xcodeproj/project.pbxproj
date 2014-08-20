@@ -22,7 +22,6 @@
 		DAE9F2E119A1DB66007A909B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAE9F2DF19A1DB66007A909B /* InfoPlist.strings */; };
 		DAE9F2E319A1DB66007A909B /* CycleAssistTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE9F2E219A1DB66007A909B /* CycleAssistTests.m */; };
 		DAE9F2EE19A1EAB7007A909B /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE9F2ED19A1EAB7007A909B /* SecondViewController.m */; };
-		DAE9F2F019A2DC2C007A909B /* 0218_rd2_more_9.gif in Resources */ = {isa = PBXBuildFile; fileRef = DAE9F2EF19A2DC2C007A909B /* 0218_rd2_more_9.gif */; };
 		DAE9F30219A3139E007A909B /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE9F30119A3139E007A909B /* News.m */; };
 		DAE9F30A19A314A8007A909B /* TBXML+HTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE9F30619A314A8007A909B /* TBXML+HTTP.m */; };
 		DAE9F30B19A314A8007A909B /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE9F30819A314A8007A909B /* TBXML.m */; };
@@ -60,7 +59,6 @@
 		DAE9F2E219A1DB66007A909B /* CycleAssistTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CycleAssistTests.m; sourceTree = "<group>"; };
 		DAE9F2EC19A1EAB7007A909B /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = SOURCE_ROOT; };
 		DAE9F2ED19A1EAB7007A909B /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = SOURCE_ROOT; };
-		DAE9F2EF19A2DC2C007A909B /* 0218_rd2_more_9.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = 0218_rd2_more_9.gif; path = ../../Desktop/Apps/CycleAssist/0218_rd2_more_9.gif; sourceTree = "<group>"; };
 		DAE9F30019A3139E007A909B /* News.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
 		DAE9F30119A3139E007A909B /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
 		DAE9F30519A314A8007A909B /* TBXML+HTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TBXML+HTTP.h"; sourceTree = "<group>"; };
@@ -97,7 +95,6 @@
 			isa = PBXGroup;
 			children = (
 				DAE9F30319A314A8007A909B /* iPhone07-素材 */,
-				DAE9F2EF19A2DC2C007A909B /* 0218_rd2_more_9.gif */,
 				DAE9F2BD19A1DB66007A909B /* CycleAssist */,
 				DAE9F2DC19A1DB66007A909B /* CycleAssistTests */,
 				DAE9F2B619A1DB66007A909B /* Frameworks */,
@@ -263,7 +260,6 @@
 				DAE9F2D019A1DB66007A909B /* Images.xcassets in Resources */,
 				DAE9F2C219A1DB66007A909B /* InfoPlist.strings in Resources */,
 				DAE9F2CB19A1DB66007A909B /* Main.storyboard in Resources */,
-				DAE9F2F019A2DC2C007A909B /* 0218_rd2_more_9.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

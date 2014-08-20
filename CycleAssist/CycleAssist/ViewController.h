@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController{
+@interface ViewController : UITableViewController{
     // CycleAssist OR Howtoを選ぶためのSegmented Controlのインスタンス
     IBOutlet UISegmentedControl *selector;
 }
