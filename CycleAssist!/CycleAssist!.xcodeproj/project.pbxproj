@@ -22,6 +22,8 @@
 		DAE9F43819A45749007A909B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE9F41719A45749007A909B /* UIKit.framework */; };
 		DAE9F44019A45749007A909B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAE9F43E19A45749007A909B /* InfoPlist.strings */; };
 		DAE9F44219A45749007A909B /* CycleAssist_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE9F44119A45749007A909B /* CycleAssist_Tests.m */; };
+		DAE9F44C19A58450007A909B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE9F44B19A58450007A909B /* MapKit.framework */; };
+		DAE9F44F19A5946A007A909B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE9F44E19A5946A007A909B /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,9 @@
 		DAE9F43D19A45749007A909B /* CycleAssist!Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CycleAssist!Tests-Info.plist"; sourceTree = "<group>"; };
 		DAE9F43F19A45749007A909B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DAE9F44119A45749007A909B /* CycleAssist_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CycleAssist_Tests.m; sourceTree = "<group>"; };
+		DAE9F44B19A58450007A909B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		DAE9F44D19A58B4A007A909B /* MKMapView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MKMapView.h; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/MapKit.framework/Headers/MKMapView.h; sourceTree = "<group>"; };
+		DAE9F44E19A5946A007A909B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAE9F44F19A5946A007A909B /* CoreLocation.framework in Frameworks */,
+				DAE9F44C19A58450007A909B /* MapKit.framework in Frameworks */,
 				DAE9F41619A45749007A909B /* CoreGraphics.framework in Frameworks */,
 				DAE9F41819A45749007A909B /* UIKit.framework in Frameworks */,
 				DAE9F41419A45749007A909B /* Foundation.framework in Frameworks */,
@@ -104,6 +111,8 @@
 		DAE9F41219A45749007A909B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DAE9F44E19A5946A007A909B /* CoreLocation.framework */,
+				DAE9F44B19A58450007A909B /* MapKit.framework */,
 				DAE9F41319A45749007A909B /* Foundation.framework */,
 				DAE9F41519A45749007A909B /* CoreGraphics.framework */,
 				DAE9F41719A45749007A909B /* UIKit.framework */,
@@ -122,6 +131,7 @@
 				DAE9F42919A45749007A909B /* FirstViewController.m */,
 				DAE9F42B19A45749007A909B /* SecondViewController.h */,
 				DAE9F42C19A45749007A909B /* SecondViewController.m */,
+				DAE9F44D19A58B4A007A909B /* MKMapView.h */,
 				DAE9F42E19A45749007A909B /* Images.xcassets */,
 				DAE9F41A19A45749007A909B /* Supporting Files */,
 			);
@@ -462,6 +472,7 @@
 				DAE9F44719A45749007A909B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DAE9F44819A45749007A909B /* Build configuration list for PBXNativeTarget "CycleAssist!Tests" */ = {
 			isa = XCConfigurationList;
@@ -470,6 +481,7 @@
 				DAE9F44A19A45749007A909B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

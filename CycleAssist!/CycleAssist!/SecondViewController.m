@@ -16,7 +16,7 @@
 @property (nonatomic, strong) NSString *url;
 @end
 
-//#define NANAPI_API_URL @"http://api.nanapi.jp/v1/recipeSearchDetails/?key=4b542e23e43f6&format=json&top_theme_id=3969&query=%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E8%87%AA%E8%BB%A2%E8%BB%8A"
+
 
 @implementation SecondViewController{
 
@@ -90,26 +90,7 @@ NSURL *urlForSafari;
                        ];
 
 
-//    //Jsonの取得コール
-//    [self getJson];
 }
-
-//- (void)getJson
-//{
-//    NSURL *url = [NSURL URLWithString:NANAPI_API_URL];
-//    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-//    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-//        
-//        // JSON形式のデータをNSDictへ
-//        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-//        
-//        // リスト管理するプロパティへ挿入
-//        self.nanapilist = [[dict objectForKey:@"response"] objectForKey:@"recipes"];
-//         // データ取得後テーブルを再描画
-//         [self.tableView reloadData];
-//         }];
-//        
-//    }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // セクション数

@@ -7,7 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface FirstViewController : UIViewController
+<MKMapViewDelegate>{
+    //地図表示用
+     MKMapView *myMapView;
+    //　現在地取得用
+}
+
+
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+- (IBAction) showHere : (id)sender;
 
 @end

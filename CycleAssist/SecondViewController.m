@@ -7,13 +7,13 @@
 //
 
 #import "SecondViewController.h"
-@interface SecondViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface SecondViewController ()<
 
 @property (strong, nonatomic)NSMutableArray *nanapilist;
 
 @end
 
-#define NANAPI_API_URL @"http://api.nanapi.jp/v1/recipeSearchDetails/?key=4b542e23e43f6&format=json&query=%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AA%E3%83%B3%E3%82%B0%20%E8%87%AA%E8%BB%A2%E8%BB%8A%20%E3%83%90%E3%82%A4%E3%82%AF"
+//#define NANAPI_API_URL @"http://api.nanapi.jp/v1/recipeSearchDetails/?key=4b542e23e43f6&format=json&query=%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AA%E3%83%B3%E3%82%B0%20%E8%87%AA%E8%BB%A2%E8%BB%8A%20%E3%83%90%E3%82%A4%E3%82%AF"
 @implementation SecondViewController{
 
 
@@ -36,8 +36,9 @@ NSURL *urlForSafari;
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
     
+
     //JSONの取得コール
-    [self getJson];
+   [self getJson];
 }
 
 - (void)getJson
@@ -51,7 +52,7 @@ NSURL *urlForSafari;
         
                 // リスト管理するプロパティへ挿入
                 self.nanapilist = [[dict objectForKey:@"response"] objectForKey:@"recipes"];
-        
+        [
                 // データ取得後テーブルを再描画
             [self.tableView reloadData];
             }];
