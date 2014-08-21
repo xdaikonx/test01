@@ -7,8 +7,7 @@
 //
 
 #import "FirstViewController.h"
-
-@interface FirstViewController ()
+@interface FirstViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) NSMutableArray *Weather;
 @end
 
@@ -33,6 +32,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+
 	// Do any additional setup after loading the view, typically from a nib.
     //位置情報を作成（現在地：渋谷）
     CLLocationCoordinate2D fromCoordinate = CLLocationCoordinate2DMake(kLatitudeShibuya, kLongitudeShibuya);
@@ -85,6 +86,8 @@
             [self.mapView addOverlay:route.polyline];
         }
     }];
+    
+    [self getJson];
 }
 
 - (void)didReceiveMemoryWarning
@@ -107,10 +110,6 @@
     }
 }
 
-
-
-
-
 - (void)getJson
 {
         NSURL *url = [NSURL URLWithString:NANAPI_API_URL];
@@ -121,29 +120,28 @@
                 NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         
                 // リスト管理するプロパティへ挿入
-                self.Weather = [[dict objectForKey:@"coord"] objectForKey:@"weather"];
+                self.Weather = [dict objectForKey:@"weather"];
+            
+            [self.tableView reloadData];
         
             }];
-
-}
-
--(IBAction)showHere:(id)sender{
-    myMapView.showsUserLocation=YES;
     
+
+
 }
 
-//- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
-//    // set center.
-//    [mapView setCenterCoordinate:userLocation.location.coordinate animated:YES];
-//    
-//    // zoom in.
-//    MKCoordinateRegion theRegion = mapView.region;
-//    theRegion.span.longitudeDelta /= 40;
-//    theRegion.span.latitudeDelta /= 40;
-//    [mapView setRegion:theRegion animated:YES];
-//}
+#pragma mark - UITableViewDataSource
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1.f;
+}
 
-
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    cell.textLabel.text = [[self.Weather objectAtIndex:indexPath.row] objectForKey:@"main"];
+    return cell;
+}
 
 @end

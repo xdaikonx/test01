@@ -17,8 +17,7 @@
     //　現在地取得用
 }
 
-
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
-- (IBAction) showHere : (id)sender;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
