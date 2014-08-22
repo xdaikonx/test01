@@ -24,8 +24,6 @@
 		DAE9F44219A45749007A909B /* CycleAssist_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE9F44119A45749007A909B /* CycleAssist_Tests.m */; };
 		DAE9F44C19A58450007A909B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE9F44B19A58450007A909B /* MapKit.framework */; };
 		DAE9F44F19A5946A007A909B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE9F44E19A5946A007A909B /* CoreLocation.framework */; };
-		DAE9F76A19A6D630007A909B /* iPhone-5-Gradient-Background-09.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAE9F76919A6D630007A909B /* iPhone-5-Gradient-Background-09.jpg */; };
-		DAE9F76C19A6D690007A909B /* iPhone-5-Gradient-Background-03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAE9F76B19A6D690007A909B /* iPhone-5-Gradient-Background-03.jpg */; };
 		DAE9F76E19A6D73A007A909B /* 864x1536x80454a6c9eaed8f3301e52d.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAE9F76D19A6D73A007A909B /* 864x1536x80454a6c9eaed8f3301e52d.jpg */; };
 /* End PBXBuildFile section */
 
@@ -64,8 +62,6 @@
 		DAE9F44B19A58450007A909B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		DAE9F44D19A58B4A007A909B /* MKMapView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MKMapView.h; path = ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/MapKit.framework/Headers/MKMapView.h; sourceTree = "<group>"; };
 		DAE9F44E19A5946A007A909B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		DAE9F76919A6D630007A909B /* iPhone-5-Gradient-Background-09.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "iPhone-5-Gradient-Background-09.jpg"; path = "../../Desktop/Apps/CycleAssist/iPhone-5-Gradient-Background-09.jpg"; sourceTree = "<group>"; };
-		DAE9F76B19A6D690007A909B /* iPhone-5-Gradient-Background-03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "iPhone-5-Gradient-Background-03.jpg"; path = "../../Desktop/Apps/CycleAssist/iPhone-5-Gradient-Background-03.jpg"; sourceTree = "<group>"; };
 		DAE9F76D19A6D73A007A909B /* 864x1536x80454a6c9eaed8f3301e52d.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 864x1536x80454a6c9eaed8f3301e52d.jpg; path = ../../Desktop/Apps/CycleAssist/864x1536x80454a6c9eaed8f3301e52d.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,8 +95,6 @@
 			isa = PBXGroup;
 			children = (
 				DAE9F76D19A6D73A007A909B /* 864x1536x80454a6c9eaed8f3301e52d.jpg */,
-				DAE9F76B19A6D690007A909B /* iPhone-5-Gradient-Background-03.jpg */,
-				DAE9F76919A6D630007A909B /* iPhone-5-Gradient-Background-09.jpg */,
 				DAE9F41919A45749007A909B /* CycleAssist! */,
 				DAE9F43B19A45749007A909B /* CycleAssist!Tests */,
 				DAE9F41219A45749007A909B /* Frameworks */,
@@ -262,10 +256,8 @@
 			files = (
 				DAE9F76E19A6D73A007A909B /* 864x1536x80454a6c9eaed8f3301e52d.jpg in Resources */,
 				DAE9F42F19A45749007A909B /* Images.xcassets in Resources */,
-				DAE9F76A19A6D630007A909B /* iPhone-5-Gradient-Background-09.jpg in Resources */,
 				DAE9F41E19A45749007A909B /* InfoPlist.strings in Resources */,
 				DAE9F42719A45749007A909B /* Main.storyboard in Resources */,
-				DAE9F76C19A6D690007A909B /* iPhone-5-Gradient-Background-03.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
