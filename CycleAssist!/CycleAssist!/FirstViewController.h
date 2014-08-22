@@ -11,12 +11,12 @@
 #import <CoreLocation/CoreLocation.h>
 
 @interface FirstViewController : UIViewController
-<MKMapViewDelegate>{
+<MKMapViewDelegate,UISearchBarDelegate>{
     //地図表示用
      MKMapView *myMapView;
     //　現在地取得用
 }
-
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 

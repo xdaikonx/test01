@@ -59,6 +59,14 @@
                                     <outlet property="delegate" destination="CZ4-MO-1fc" id="RfB-DN-VGf"/>
                                 </connections>
                             </tableView>
+                            <searchBar contentMode="redraw" id="JuM-8m-fvU">
+                                <rect key="frame" x="0.0" y="159" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="CZ4-MO-1fc" id="unW-WD-2k3"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -66,6 +74,7 @@
                     <tabBarItem key="tabBarItem" title="CycleAssist" image="first" id="u1e-5L-l1D"/>
                     <connections>
                         <outlet property="mapView" destination="1fT-x0-CTv" id="0ye-z2-kRN"/>
+                        <outlet property="searchBar" destination="JuM-8m-fvU" id="Oee-4r-3E1"/>
                         <outlet property="tableView" destination="hE2-VY-lbG" id="dzC-zP-e1L"/>
                     </connections>
                 </viewController>
