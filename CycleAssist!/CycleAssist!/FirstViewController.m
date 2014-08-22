@@ -15,7 +15,7 @@
 #define kLongitudeShibuya 139.702776
 #define kLatitudeRoppongi 35.665213
 #define kLongitudeRoppongi 139.730011
-#define NANAPI_API_URL @"http://api.openweathermap.org/data/2.5/weather?q=Tokyo"
+#define NANAPI_API_URL @"http://api.openweathermap.org/data/2.5/weather?lat=35.658987&lon=139.702776"
 
 @implementation FirstViewController
 

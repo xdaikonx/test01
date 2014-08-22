@@ -34,7 +34,7 @@ NSURL *urlForSafari;
     self.nanapilist1 =@[
                        @{
                            @"title": @"       ■自転車についてのHowto■    ",
-                           @"url": @"h"
+                           @"url": @"http://nanapi.jp/search/q:%E8%87%AA%E8%BB%A2%E8%BB%8A/theme_id:1476"
                            },
                        @{
                            @"title": @"自転車の電気は必ず点けよう！自転車でのマナー",
@@ -53,7 +53,7 @@ NSURL *urlForSafari;
     self.nanapilist2=@[
                        @{
                            @"title": @"         ■旅行についてのHowto■   ",
-                           @"url": @""
+                           @"url": @"http://nanapi.jp/search/q:%E6%97%85%E8%A1%8C%E3%80%80%E3%83%88%E3%83%A9%E3%83%96%E3%83%AB/theme_id:945"
                            },
                        @{
                            @"title": @"十分な準備をして…国内旅行でのトラブル",
@@ -72,7 +72,7 @@ NSURL *urlForSafari;
     self.nanapilist3=@[
                        @{
                            @"title": @"       ■天気についてのHowto■   ",
-                           @"url": @""
+                           @"url": @"http://nanapi.jp/search/q:%E5%A4%A9%E6%B0%97%E4%BA%88%E5%A0%B1"
                            },
                        @{
                            @"title": @"おすすめ天気予報アプリ",
@@ -100,7 +100,7 @@ NSURL *urlForSafari;
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // 各セクションごとのcell数
-    return 3;
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

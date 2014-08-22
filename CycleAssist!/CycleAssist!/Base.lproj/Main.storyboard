@@ -12,39 +12,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="864x1536x80454a6c9eaed8f3301e52d.jpg" id="lKL-1b-usk">
+                                <rect key="frame" x="-45" y="-804" width="864" height="1536"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="bottom" mapType="hybrid" showsUserLocation="YES" id="1fT-x0-CTv">
-                                <rect key="frame" x="8" y="111" width="305" height="408"/>
+                                <rect key="frame" x="10" y="164" width="300" height="331"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="CZ4-MO-1fc" id="zRj-NJ-bgt"/>
                                 </connections>
                             </mapView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　　　天気：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="213-oR-qEn">
+                                <rect key="frame" x="0.0" y="103" width="112" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.80392163989999998" green="0.94901967050000002" blue="0.9450981021" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="highlightedColor" red="0.80392163991928101" green="0.9490196704864502" blue="0.94509810209274292" alpha="1" colorSpace="deviceRGB"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="hE2-VY-lbG">
-                                <rect key="frame" x="37" y="41" width="246" height="46"/>
+                                <rect key="frame" x="107" y="103" width="246" height="46"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <label key="tableFooterView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yia-Tk-4jz">
-                                    <rect key="frame" x="0.0" y="66" width="246" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                <color key="backgroundColor" red="0.80392163989999998" green="0.94901967050000002" blue="0.9450981021" alpha="1" colorSpace="deviceRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="hUX-T0-Y6C">
-                                        <rect key="frame" x="0.0" y="22" width="246" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="46" id="hUX-T0-Y6C">
+                                        <rect key="frame" x="0.0" y="22" width="246" height="46"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hUX-T0-Y6C" id="MbA-VA-15c">
-                                            <rect key="frame" x="0.0" y="0.0" width="246" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="246" height="45"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="i7H-bi-B8D">
-                                                    <rect key="frame" x="107" y="2" width="0.0" height="0.0"/>
+                                                    <rect key="frame" x="98" y="-117" width="9" height="47"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.80392163989999998" green="0.94901967050000002" blue="0.9450981021" alpha="1" colorSpace="deviceRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -53,7 +60,8 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="CycleAssist" image="first" id="u1e-5L-l1D"/>
                     <connections>
@@ -124,6 +132,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="864x1536x80454a6c9eaed8f3301e52d.jpg" width="864" height="1536"/>
         <image name="first" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
